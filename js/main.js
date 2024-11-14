@@ -4348,3 +4348,19 @@ function initMap() {
     }
   });
 }
+
+
+    function toggleMedia(element, playVideo) {
+        const video = element.querySelector('.media-video');
+        const img = element.querySelector('.media-img');
+        
+        if (playVideo) {
+            img.style.display = 'none';  // Hide the image
+            video.style.display = 'block';  // Show the video
+            video.play();  // Start playing the video
+        } else {
+            video.pause();  // Pause the video
+            video.style.display = 'none';  // Hide the video
+            img.style.display = 'block';  // Show the image
+        }
+    }
