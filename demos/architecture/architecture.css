@@ -373,7 +373,8 @@ footer .elements-social li {
 }
 
 /* Hide media (initially) */
-.media-video {
+.media-video,
+.media-image {
   opacity: 0;
   transition: opacity 0.3s;
 }

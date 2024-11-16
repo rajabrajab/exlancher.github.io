@@ -4348,26 +4348,22 @@ function initMap() {
     }
   });
 }
-function hideSpinner(mediaElement) {
-  const spinner = mediaElement
-    .closest(".portfolio-box")
-    .querySelector(".loading-spinner");
-
+function hideSpinner(mediaElement, spinnerClass) {
+  // Find the spinner with the provided class
+  const spinner = document.querySelector(`.${spinnerClass}`);
   if (!spinner) {
-    console.error("Spinner element not found.");
+    console.error(`Spinner with class "${spinnerClass}" not found.`);
     return;
   }
 
   spinner.style.display = "none"; // Hide the spinner
-  mediaElement.style.opacity = 1; // Show the video
+  mediaElement.style.opacity = 1; // Show the media element
+  console.log(`Spinner "${spinnerClass}" hidden for`, mediaElement);
 }
-
 function pauseVideo(videoElement) {
   videoElement.pause();
-  console.log("Video paused on hover.");
 }
 
 function playVideo(videoElement) {
   videoElement.play();
-  console.log("Video resumed on mouse leave.");
 }
