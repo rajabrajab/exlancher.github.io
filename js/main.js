@@ -4348,19 +4348,26 @@ function initMap() {
     }
   });
 }
+function hideSpinner(mediaElement) {
+  const spinner = mediaElement
+    .closest(".portfolio-box")
+    .querySelector(".loading-spinner");
 
+  if (!spinner) {
+    console.error("Spinner element not found.");
+    return;
+  }
 
-    function toggleMedia(element, playVideo) {
-        const video = element.querySelector('.media-video');
-        const img = element.querySelector('.media-img');
-        
-        if (playVideo) {
-            img.style.display = 'none';  // Hide the image
-            video.style.display = 'block';  // Show the video
-            video.play();  // Start playing the video
-        } else {
-            video.pause();  // Pause the video
-            video.style.display = 'none';  // Hide the video
-            img.style.display = 'block';  // Show the image
-        }
-    }
+  spinner.style.display = "none"; // Hide the spinner
+  mediaElement.style.opacity = 1; // Show the video
+}
+
+function pauseVideo(videoElement) {
+  videoElement.pause();
+  console.log("Video paused on hover.");
+}
+
+function playVideo(videoElement) {
+  videoElement.play();
+  console.log("Video resumed on mouse leave.");
+}

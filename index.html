@@ -240,10 +240,14 @@
                                                 <div class="portfolio-box"
                                                     data-bottom-top="transform: translate3d(0px, 50px, 0px);"
                                                     data-top-bottom="transform: translate3d(0px, -50px, 0px);">
+
+                                                    <div class="loading-spinner"></div>
                                                     <div>
                                                         <a href="single-project.html">
-                                                            <img class="border-radius-6px" alt=""
-                                                                src="images/project.png" />
+                                                            <img class="border-radius-6px" alt="Tailoring Project"
+                                                                src="images/project.png" loading="lazy"
+                                                                onload="hideSpinner(this)"
+                                                                style="opacity: 0; transition: opacity 0.3s ease-in-out;" />
                                                         </a>
                                                     </div>
                                                     <div
@@ -274,37 +278,27 @@
                                 <div class="atropos-rotate">
                                     <div class="atropos-inner overflow-visible">
                                         <div class="border-radius-6px " data-atropos-offset="-5">
-                                            <li class="grid-item grid-item-single transition-inner-all"
-                                                onmouseenter="toggleMedia(this, true)"
-                                                onmouseleave="toggleMedia(this, false)">
+                                            <li class="grid-item grid-item-single transition-inner-all">
+                                                <div class="portfolio-box position-relative">
 
-                                                <div class="portfolio-box"
-                                                    data-bottom-top="transform: translate3d(0px, 100px, 0px)"
-                                                    data-top-bottom="transform: translate3d(0px, 180px, 0px);">
+                                                    <div class="loading-spinner"></div>
 
-                                                    <div>
-                                                        <!-- Image placeholder (default visible) -->
-                                                        <img class="media-img border-radius-6px"
-                                                            src="images/Picture1.png" alt="Placeholder"
-                                                            style="width: 100%; height: auto; object-fit: cover;">
+                                                    <video class="media-video border-radius-6px" src="images/vv.mp4"
+                                                        muted loop autoplay playsinline loading="lazy"
+                                                        oncanplay="hideSpinner(this)" onmouseenter="pauseVideo(this)"
+                                                        onmouseleave="playVideo(this)"
+                                                        style="width: 100%; height: auto; object-fit: cover; opacity: 1;">
+                                                    </video>
+                                                </div>
 
-                                                        <!-- Video element (initially hidden) -->
-                                                        <video class="media-video border-radius-6px" src="images/vv.mp4"
-                                                            muted loop playsinline
-                                                            style="width: 100%; height: auto; object-fit: cover; display: none;">
-                                                        </video>
-                                                    </div>
-
-                                                    <div
-                                                        class="portfolio-caption pt-35px pb-35px sm-pt-20px sm-pb-20px">
-                                                        <a href="single-project.html"
-                                                            class="color-base text-black-hover fw-600 fs-24 alt-font font-style-italic">
-                                                            Designblast
-                                                        </a>
-                                                        <span
-                                                            class="d-inline-block align-middle w-10px separator-line-1px bg-white ms-5px me-5px"></span>
-                                                        <div class="d-inline-block text-white">Photography</div>
-                                                    </div>
+                                                <div class="portfolio-caption pt-35px pb-35px sm-pt-20px sm-pb-20px">
+                                                    <a href="single-project.html"
+                                                        class="color-base text-black-hover fw-600 fs-24 alt-font font-style-italic">
+                                                        Designblast
+                                                    </a>
+                                                    <span
+                                                        class="d-inline-block align-middle w-10px separator-line-1px bg-white ms-5px me-5px"></span>
+                                                    <div class="d-inline-block text-white">Photography</div>
                                                 </div>
                                             </li>
                                         </div>
@@ -581,7 +575,8 @@
                 <div class="col-md-4 mb-4"
                     data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 100, "staggervalue": 150, "easing": "easeOutQuad" }'>
                     <div class="feature-box-why-us text-center">
-                        <div class="feature-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                        <div class="feature-icon"><i class="fa-solid fa-gauge-high"></i>
+                        </div>
                         <h4 class="feature-title">Performance</h4>
                         <p class="feature-description">Optimized solutions that ensure fast load times and smooth
                             performance, keeping your users engaged.</p>
